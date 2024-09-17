@@ -1,0 +1,70 @@
+<apex:page showHeader="false" sidebar="false" controller="FeedbackController">
+    <apex:form >
+        <apex:pageMessages />
+
+        <apex:panelGrid columns="1" cellpadding="10" styleClass="compact-form-container">
+            <apex:outputLabel for="name" value="Feedback Name:" styleClass="form-label"/>
+            <apex:inputField value="{!feedback.Name__c}" required="true" styleClass="form-input"/>
+
+            <apex:outputLabel for="email" value="Email:" styleClass="form-label"/>
+            <apex:inputField value="{!feedback.Email__c}" required="true" styleClass="form-input"/>
+
+            <apex:outputLabel for="phone" value="Phone:" styleClass="form-label"/>
+            <apex:inputField value="{!feedback.Phone__c}" styleClass="form-input"/>
+
+            <apex:outputLabel for="comment" value="Comment:" styleClass="form-label"/>
+            <apex:inputTextarea value="{!feedback.Comment__c}" styleClass="form-textarea"/>
+
+            <apex:outputLabel for="type" value="Type:" styleClass="form-label"/>
+            <apex:inputField value="{!feedback.Type__c}" styleClass="form-input"/>
+
+            <apex:commandButton value="Submit Feedback" action="{!save}" styleClass="submit-btn"/>
+        </apex:panelGrid>
+
+        <style>
+            .compact-form-container {
+                max-width: 500px;
+                width: 100%;
+                margin: 20px auto;
+                padding: 15px;
+                background-color: #f9f9f9;
+                border-radius: 6px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                border: 1px solid #ddd;
+            }
+            .form-label {
+                display: block;
+                margin-bottom: 4px;
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+            }
+            .form-input, .form-textarea {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+            .form-textarea {
+                height: 80px;
+                resize: vertical;
+            }
+            .submit-btn {
+                background-color: #0070d2;
+                color: #fff;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 4px;
+                font-size: 16px;
+                cursor: pointer;
+                width: 100%;
+            }
+            .submit-btn:hover {
+                background-color: #005bb5;
+            }
+        </style>
+    </apex:form>
+</apex:page>
